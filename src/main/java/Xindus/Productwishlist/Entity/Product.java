@@ -1,8 +1,6 @@
 package Xindus.Productwishlist.Entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -12,16 +10,29 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Entity @Table
+@Entity
+@Table
 public class Product {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int productId;
 
     private String productName;
 
-    String productImg;
+    private String description;
+
+//    String productImg;
 
     private double price;
 
+    @ManyToOne
+    @JoinColumn
+    private UserEntity user;
+
+    public Product(String productName, String description, double price) {
+        this.productName = productName;
+        this.description = description;
+        this.price = price;
+    }
 }

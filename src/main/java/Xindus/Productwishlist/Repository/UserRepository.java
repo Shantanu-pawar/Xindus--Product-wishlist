@@ -1,9 +1,13 @@
 package Xindus.Productwishlist.Repository;
 
-import Xindus.Productwishlist.Entity.UserDetails;
+import Xindus.Productwishlist.Entity.UserEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.Optional;
+
 @Repository
-public interface UserRepository extends JpaRepository<UserDetails, Integer> {
+public interface UserRepository extends JpaRepository<UserEntity, Integer> {
+
+    Optional<UserEntity> findByEmail(String email);
 }
