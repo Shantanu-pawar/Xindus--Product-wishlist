@@ -55,10 +55,11 @@ Repository,DTOS,Transformers,Security,Exceptions``
 
 ### Security of Web Applications
 
-#### 1.Authentication and Authorization
+#### 1.Authentication and Authorization <br>
 For Authentication and Authorization I have configure with  spring security filter chain <br>
 Spring Security offers robustness through its extensive features and configurable options, ensuring <br>
 comprehensive protection against various security threats in web applications
+
 -----------------------------------------------------------------------------------------------------------------
 
                                All test cases executed successfully
