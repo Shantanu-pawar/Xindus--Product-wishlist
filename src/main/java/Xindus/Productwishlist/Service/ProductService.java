@@ -8,6 +8,7 @@ import Xindus.Productwishlist.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -34,5 +35,10 @@ public class ProductService {
         Product product = productRepository.findById(productId).get();
         productRepository.delete(product);
         return "product deleted Successfully";
+    }
+
+    // after login by Default this is all products list.
+    public List<Product> getAllProducts() {
+        return productRepository.findAll();
     }
 }
